@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Welcome to Appliance Store</title>
-</head>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:include="fragments/head" th:with="pageTitle='Welcome to Appliance Store'"></head>
+
 <body>
+
 <h1>Welcome to your Appliance Store</h1>
 If you want to register, click <a href="/users/register">here</a>.
+
+<header th:include="fragments/header"></header>
+
+<!--/*@thymesVar id="view" type="java"*/-->
+<main th:include="${view}"></main>
+
+<footer th:include="fragments/footer"></footer>
+
+<span th:include="fragments/scripts-bundle"></span>
+
 </body>
 </html>

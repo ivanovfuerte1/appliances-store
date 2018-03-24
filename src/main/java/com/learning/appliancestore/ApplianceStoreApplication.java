@@ -1,12 +1,12 @@
-package com.learning.appliancesstore;
+package com.learning.appliancestore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppliancesStoreApplication {
+public class ApplianceStoreApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppliancesStoreApplication.class, args);
+		SpringApplication.run(ApplianceStoreApplication.class, args);
 	}
 }

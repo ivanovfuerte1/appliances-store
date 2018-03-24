@@ -1,0 +1,52 @@
+package com.learning.appliancestore.entity;
+
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Created by ivanov on 24.3.2018 г..
+ */
+@Entity
+@Table(name = "roles")
+public class Role {
+    private Integer id;
+
+    private String name;
+
+    private Set<User> users;
+
+    public Role() {
+        this.users = new HashSet<>();
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Column(name = "name", nullable = false)
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @ManyToMany(mappedBy = "roles")
+    public Set<User> getUsers() {
+        return Collections.unmodifiableSet(users);
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+}

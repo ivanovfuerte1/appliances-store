@@ -1,4 +1,4 @@
-package com.learning.appliancesstore.controller;
+package com.learning.appliancestore.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * Created by ivanov on 18.3.2018 г..
  */
-@Controller
+//@Controller
 public class HomeController {
 
     @GetMapping("/")
