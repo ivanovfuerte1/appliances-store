@@ -21,14 +21,21 @@ public class User {
 
     private Set<Role> roles;
 
+    private Set<Sale> sales;
+
     public User(String email, String fullName, String password) {
         this.email = email;
         this.fullName = fullName;
         this.password = password;
         this.roles = new HashSet<>();
+        this.sales = new HashSet<>();
     }
 
     public User() {
+    }
+
+    public void addRole(Role role){
+        this.roles.add(role);
     }
 
     @Id
@@ -76,5 +83,14 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    @OneToMany(mappedBy = "customer")
+    public Set<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(Set<Sale> sales) {
+        this.sales = sales;
     }
 }

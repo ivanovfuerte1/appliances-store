@@ -2,23 +2,22 @@ package com.learning.appliancestore.entity;
 
 import javax.persistence.*;
 import java.math.BigInteger;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by ivanov on 19.3.2018 г..
  */
-//@Entity
-//@Table(name = "sales")
+@Entity
+@Table(name = "sales")
 public class Sale {
-    private BigInteger id;
+    private Integer id;
     private Double discount;
-    private List<Appliance> applianceList;
-    private Customer customer;
+   // private List<Appliance> applianceList;
+    private User customer;
 
-    public Sale(Double discount, List<Appliance> applianceList, Customer customer) {
+    public Sale(Double discount, List<Appliance> applianceList, User customer) {
         this.discount = discount;
-        this.applianceList = applianceList;
+      //  this.applianceList = applianceList;
         this.customer = customer;
     }
 
@@ -27,11 +26,11 @@ public class Sale {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public BigInteger getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(BigInteger id){
+    public void setId(Integer id){
         this.id = id;
     }
 
@@ -44,22 +43,22 @@ public class Sale {
         this.discount = discount;
     }
 
-    @OneToMany(mappedBy = "applianceId")
-    public List<Appliance> getAppliances() {
-        return Collections.unmodifiableList(applianceList);
-    }
-
-    public void setAppliances(List<Appliance> appliances) {
-        this.applianceList = appliances;
-    }
+//    @OneToMany(mappedBy = "applianceId")
+//    public List<Appliance> getAppliances() {
+//        return Collections.unmodifiableList(applianceList);
+//    }
+//
+//    public void setAppliances(List<Appliance> appliances) {
+//        this.applianceList = appliances;
+//    }
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
-    public Customer getCustomer() {
+    @JoinColumn(name = "userId", nullable = false)
+    public User getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(User customer) {
         this.customer = customer;
     }
 }
