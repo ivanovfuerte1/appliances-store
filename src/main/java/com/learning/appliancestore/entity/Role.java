@@ -1,5 +1,7 @@
 package com.learning.appliancestore.entity;
 
+import org.springframework.util.StringUtils;
+
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.HashSet;
@@ -19,6 +21,11 @@ public class Role {
 
     public Role() {
         this.users = new HashSet<>();
+    }
+
+    @Transient
+    public String getSimpleName(){
+        return StringUtils.capitalize(this.getName().substring(5).toLowerCase());
     }
 
     @Id

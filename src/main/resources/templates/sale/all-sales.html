@@ -1,0 +1,20 @@
+<main xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="container body-content">
+        <div class="row">
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Discount</th>
+                </tr>
+                <th:block th:each="sale : ${sales}">
+                    <div class="col-md-6">
+                        <tr>
+                            <td th:text="${sale.id}"></td>
+                            <td th:text="${sale.discount}"></td>
+                        </tr>
+                    </div>
+                </th:block>
+            </table>
+        </div>
+    </div>
+</main>
