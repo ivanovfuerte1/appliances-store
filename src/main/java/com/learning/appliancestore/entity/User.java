@@ -1,7 +1,6 @@
 package com.learning.appliancestore.entity;
 
 import javax.persistence.*;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -91,7 +90,7 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles")
     public Set<Role> getRoles() {
-        return Collections.unmodifiableSet(roles);
+        return roles;
     }
 
     public void setRoles(Set<Role> roles) {

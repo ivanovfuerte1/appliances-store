@@ -2,7 +2,6 @@ package com.learning.appliancestore.entity;
 
 import javax.persistence.*;
 import java.math.BigInteger;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -30,7 +29,7 @@ public class Appliance {
     @ManyToMany
     @JoinTable(name = "parts_appliances")
     public List<Part> getPartList() {
-        return Collections.unmodifiableList(partList);
+        return partList;
     }
 
     public void setPartList(List<Part> partList) {

@@ -45,7 +45,7 @@ public class Sale {
 
 //    @OneToMany(mappedBy = "applianceId")
 //    public List<Appliance> getAppliances() {
-//        return Collections.unmodifiableList(applianceList);
+//        return applianceList;
 //    }
 //
 //    public void setAppliances(List<Appliance> appliances) {
