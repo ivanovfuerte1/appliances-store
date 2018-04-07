@@ -12,12 +12,12 @@ import java.util.List;
 public class Sale {
     private Integer id;
     private Double discount;
-   // private List<Appliance> applianceList;
+    private List<Appliance> applianceList;
     private User customer;
 
     public Sale(Double discount, List<Appliance> applianceList, User customer) {
         this.discount = discount;
-      //  this.applianceList = applianceList;
+        this.applianceList = applianceList;
         this.customer = customer;
     }
 
@@ -30,7 +30,7 @@ public class Sale {
         return id;
     }
 
-    public void setId(Integer id){
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,14 +43,14 @@ public class Sale {
         this.discount = discount;
     }
 
-//    @OneToMany(mappedBy = "applianceId")
-//    public List<Appliance> getAppliances() {
-//        return applianceList;
-//    }
-//
-//    public void setAppliances(List<Appliance> appliances) {
-//        this.applianceList = appliances;
-//    }
+    @ManyToMany(mappedBy = "sales")
+    public List<Appliance> getAppliances() {
+        return applianceList;
+    }
+
+    public void setAppliances(List<Appliance> appliances) {
+        this.applianceList = appliances;
+    }
 
     @ManyToOne
     @JoinColumn(name = "userId", nullable = false)

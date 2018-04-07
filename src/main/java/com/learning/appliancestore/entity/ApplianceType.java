@@ -6,10 +6,10 @@ import java.math.BigInteger;
 /**
  * Created by ivanov on 19.3.2018 г..
  */
-//@Entity
-//@Table(name = "applianceTypes")
+@Entity
+@Table(name = "applianceTypes")
 public class ApplianceType {
-    private BigInteger id;
+    private Integer id;
     private String name;
 
     public ApplianceType(String name) {
@@ -21,11 +21,11 @@ public class ApplianceType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public BigInteger getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(BigInteger id){
+    public void setId(Integer id){
         this.id = id;
     }
 

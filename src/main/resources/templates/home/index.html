@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<a th:href="@{'/basket/show/'}">
+    <img th:src="@{'/img/cart.png'}" width="500" height="500"/>
+</a>
+<p>
+    <th:block th:if="${appliances.isEmpty()==false}">
+        <div th:each="appliance:${appliances}">
+            <a th:href="@{'/basket/add/' + ${appliance.id}}">
+                <img th:src="${appliance.imagePath}" width="500" height="500"/>
+            </a>
+        </div>
 
+    </th:block>
+</p>
 </body>
 </html>

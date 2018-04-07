@@ -1,0 +1,9 @@
+<main xmlns:th="http://www.w3.org/1999/xhtml">
+    <p>
+        <th:block th:if="${appliancePaths.isEmpty()==false}">
+            <div th:each="appliance:${appliancePaths}">
+                <img th:src="@{${appliance}}" width="500" height="500"/>
+            </div>
+        </th:block>
+    </p>
+</main>
