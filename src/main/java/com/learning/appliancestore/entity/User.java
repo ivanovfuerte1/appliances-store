@@ -19,14 +19,17 @@ public class User {
 
     private String password;
 
+    private String enabled;
+
     private Set<Role> roles;
 
     private Set<Sale> sales;
 
-    public User(String email, String fullName, String password) {
+    public User(String email, String fullName, String password, String enabled) {
         this.email = email;
         this.fullName = fullName;
         this.password = password;
+        this.enabled = enabled;
         this.roles = new HashSet<>();
         this.sales = new HashSet<>();
     }
@@ -48,6 +51,10 @@ public class User {
     @Transient
     public boolean isCustomer(Sale sale){
         return Objects.equals(this.getId(), sale.getCustomer().getId());
+    }
+
+    public void disableUser(){
+        setEnabled("false");
     }
 
     @Id
@@ -85,6 +92,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(String enabled) {
+        this.enabled = enabled;
     }
 
     @ManyToMany(fetch = FetchType.EAGER)

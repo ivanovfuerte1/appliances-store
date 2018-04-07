@@ -48,7 +48,8 @@ public class UserController {
         User user = new User(
                 userBindingModel.getEmail(),
                 userBindingModel.getFullName(),
-                bCryptPasswordEncoder.encode(userBindingModel.getPassword())
+                bCryptPasswordEncoder.encode(userBindingModel.getPassword()),
+                "true"
         );
 
         Role userRole = this.roleRepository.findByName("ROLE_USER");

@@ -18,6 +18,9 @@ public class UserBindingModel {
     @NotNull
     private String confirmPassword;
 
+    @NotNull
+    private String enabled;
+
     public String getEmail() {
         return email;
     }
@@ -48,5 +51,13 @@ public class UserBindingModel {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public String getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(String enabled) {
+        this.enabled = enabled;
     }
 }

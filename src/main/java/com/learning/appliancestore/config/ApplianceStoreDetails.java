@@ -17,7 +17,7 @@ public class ApplianceStoreDetails extends User implements UserDetails{
     private User user;
 
     public ApplianceStoreDetails(ArrayList<String> roles, User user) {
-        super(user.getEmail(), user.getFullName(), user.getPassword());
+        super(user.getEmail(), user.getFullName(), user.getPassword(), user.getEnabled());
         this.roles = roles;
         this.user = user;
     }
