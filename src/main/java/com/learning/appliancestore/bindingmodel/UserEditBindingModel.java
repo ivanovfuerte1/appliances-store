@@ -1,4 +1,4 @@
-package com.learning.appliancestore.bindingModel;
+package com.learning.appliancestore.bindingmodel;
 
 import java.util.ArrayList;
 import java.util.List;

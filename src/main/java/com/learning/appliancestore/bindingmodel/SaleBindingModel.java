@@ -1,4 +1,4 @@
-package com.learning.appliancestore.bindingModel;
+package com.learning.appliancestore.bindingmodel;
 
 /**
  * Created by ivanov on 2.4.2018 г..
