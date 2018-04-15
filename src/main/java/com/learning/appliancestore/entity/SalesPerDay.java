@@ -1,6 +1,7 @@
 package com.learning.appliancestore.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by ivanov on 14.4.2018 г..
@@ -11,9 +12,11 @@ public class SalesPerDay {
 
     private Integer id;
     private Integer count;
+    private Date date;
 
-    public SalesPerDay(Integer count) {
+    public SalesPerDay(Integer count, Date date) {
         this.count = count;
+        this.date = date;
     }
 
     @Id
@@ -33,5 +36,14 @@ public class SalesPerDay {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    @Column(name = "date")
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

@@ -1,6 +1,6 @@
 package com.learning.appliancestore.controller;
 
-import com.learning.appliancestore.bindingModel.SaleBindingModel;
+import com.learning.appliancestore.bindingmodel.SaleBindingModel;
 import com.learning.appliancestore.entity.Sale;
 import com.learning.appliancestore.repository.SaleRepository;
 import com.learning.appliancestore.repository.UserRepository;

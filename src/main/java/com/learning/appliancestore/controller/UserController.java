@@ -1,6 +1,6 @@
 package com.learning.appliancestore.controller;
 
-import com.learning.appliancestore.bindingModel.UserBindingModel;
+import com.learning.appliancestore.bindingmodel.UserBindingModel;
 import com.learning.appliancestore.entity.Role;
 import com.learning.appliancestore.entity.User;
 import com.learning.appliancestore.repository.RoleRepository;

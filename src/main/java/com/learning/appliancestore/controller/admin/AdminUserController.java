@@ -1,6 +1,6 @@
 package com.learning.appliancestore.controller.admin;
 
-import com.learning.appliancestore.bindingModel.UserEditBindingModel;
+import com.learning.appliancestore.bindingmodel.UserEditBindingModel;
 import com.learning.appliancestore.entity.Role;
 import com.learning.appliancestore.entity.User;
 import com.learning.appliancestore.repository.RoleRepository;
