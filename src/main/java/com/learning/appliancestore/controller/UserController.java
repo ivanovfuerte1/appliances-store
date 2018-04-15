@@ -6,6 +6,7 @@ import com.learning.appliancestore.entity.User;
 import com.learning.appliancestore.repository.RoleRepository;
 import com.learning.appliancestore.repository.UserRepository;
 import com.learning.appliancestore.service.EmailService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -49,12 +50,10 @@ public class UserController {
         }
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        User user = new User(
-                userBindingModel.getEmail(),
-                userBindingModel.getFullName(),
-                bCryptPasswordEncoder.encode(userBindingModel.getPassword()),
-                "true"
-        );
+        userBindingModel.setPassword(bCryptPasswordEncoder.encode(userBindingModel.getPassword()));
+        ModelMapper modelMapper = new ModelMapper();
+        User user = modelMapper.map(userBindingModel, User.class);
+        user.setEnabled("true");
 
         Role userRole = this.roleRepository.findByName("ROLE_USER");
         user.addRole(userRole);

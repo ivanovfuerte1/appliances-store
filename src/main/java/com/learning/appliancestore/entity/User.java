@@ -35,6 +35,8 @@ public class User {
     }
 
     public User() {
+        this.roles = new HashSet<>();
+        this.sales = new HashSet<>();
     }
 
     public void addRole(Role role){

@@ -33,6 +33,9 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception e) {
         Long preHandleTime = (Long)request.getAttribute("preHandleTime");
         Long postHandleTime = (Long) request.getAttribute("postHandleTime");
+        if(preHandleTime == null || postHandleTime == null){
+            return;
+        }
         long actionTime = postHandleTime - preHandleTime;
         long overallTime = System.currentTimeMillis() - preHandleTime;
 
