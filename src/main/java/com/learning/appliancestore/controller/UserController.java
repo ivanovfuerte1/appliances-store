@@ -5,6 +5,7 @@ import com.learning.appliancestore.entity.Role;
 import com.learning.appliancestore.entity.User;
 import com.learning.appliancestore.repository.RoleRepository;
 import com.learning.appliancestore.repository.UserRepository;
+import com.learning.appliancestore.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -31,6 +32,9 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private EmailService emailService;
+
     @GetMapping("/register")
     public String register(Model model){
         model.addAttribute("view", "user/register");
@@ -56,6 +60,8 @@ public class UserController {
         user.addRole(userRole);
 
         this.userRepository.saveAndFlush(user);
+
+        emailService.sendSimpleMessage(userBindingModel.getEmail(), "test", "Hello, " + userBindingModel.getFullName() + "!" + System.lineSeparator() + "Welcome to our amazing store!");
         return "redirect:/login";
     }
 
