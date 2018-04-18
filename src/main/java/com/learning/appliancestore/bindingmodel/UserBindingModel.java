@@ -1,6 +1,7 @@
 package com.learning.appliancestore.bindingmodel;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Created by ivanov on 1.4.2018 г..
@@ -18,7 +19,6 @@ public class UserBindingModel {
     @NotNull
     private String confirmPassword;
 
-    @NotNull
     private String enabled;
 
     public String getEmail() {
@@ -37,6 +37,7 @@ public class UserBindingModel {
         this.fullName = fullName;
     }
 
+    @Size(min=3, max=30)
     public String getPassword() {
         return password;
     }

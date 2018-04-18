@@ -1,6 +1,7 @@
 package com.learning.appliancestore.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -70,6 +71,7 @@ public class User {
     }
 
     @Column(name = "email", unique = true, nullable = false)
+    @Size(min=5, max=50)
     public String getEmail() {
         return email;
     }
@@ -79,6 +81,7 @@ public class User {
     }
 
     @Column(name = "fullName", nullable = false)
+    @Size(min=3, max=50)
     public String getFullName() {
         return fullName;
     }
@@ -87,7 +90,7 @@ public class User {
         this.fullName = fullName;
     }
 
-    @Column(name = "password", length = 60, nullable = false)
+    @Column(name = "password", nullable = false)
     public String getPassword() {
         return password;
     }
