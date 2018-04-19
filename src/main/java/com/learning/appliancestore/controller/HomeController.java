@@ -50,7 +50,6 @@ public class HomeController {
         model.addAttribute("appliancePaths", appliancePaths);
         model.addAttribute("view", "/basket/show");
 
-
         return "base-layout";
     }
 }
